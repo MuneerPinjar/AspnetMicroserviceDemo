@@ -54,7 +54,7 @@ namespace Catlog.API.Repositories
 
         public async Task CreateProduct(Product product)
         {
-            await _context.Products.InsertOneAsync(product);
+            await _context.Products.InsertOneAsync(product);            
         }
 
         public async Task<bool> UpdateProduct(Product product)

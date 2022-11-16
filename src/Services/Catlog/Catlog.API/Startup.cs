@@ -1,3 +1,5 @@
+using Catlog.API.Data;
+using Catlog.API.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +33,9 @@ namespace Catlog.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Catlog.API", Version = "v1" });
             });
+
+            services.AddScoped<ICatlogContext, CatlogContext>();
+            services.AddScoped<IProductRepository, ProductRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
